@@ -1,1 +1,18 @@
-{}
+{
+  "endpoint": "xxxxxxxxxxxxxx-ats.iot.us-east-1.amazonaws.com",
+  "region": "us-east-1",
+  "certFile": "certs/xxxxxxxxxxx-certificate.pem.crt",
+  "keyFile": "certs/xxxxxxxxxxx-private.pem.key",
+  "clientId": "desktop",
+  "metrics": {
+    "python": {
+      "cpu_user": "psutil.cpu_times_percent().user",
+      "cpu_system": "psutil.cpu_times_percent().system"
+    },
+    "shell": {
+      "memoryAvailable": "cat /proc/meminfo | grep 'MemAvailable' | awk '{print $2}'",
+      "memoryFree": "cat /proc/meminfo | grep 'MemFree' | awk '{print $2}'"
+    }
+  },
+  "delay": 1
+}
